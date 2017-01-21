@@ -9,16 +9,22 @@ import java.util.Map;
 public class RomanNumeral {
 
     public static String converFromArabic(int number) {
-        if (number == 2) {
+        Map<Integer, String> romanNumerals = buildRomanNumeralCharts();
+        if (number <= 4 ){
+            String value = romanNumerals.get(1);
+            StringBuilder romanNumeralToReturn = new StringBuilder();
+            for (int i=1; i<=number; i++){
+                romanNumeralToReturn.append(value);
+            }
+            return  romanNumeralToReturn.toString();
+        }
+        /*if (number == 2) {
             return "II";
         }
         if (number == 3) {
             return "III";
-        }
-
-        Map<Integer, String> romanNumerals = buildRomanNumeralCharts();
-
-        return romanNumerals.get(number);
+        }*/
+        return  romanNumerals.get(number);
     }
 
     private static Map<Integer, String> buildRomanNumeralCharts() {
@@ -27,7 +33,7 @@ public class RomanNumeral {
         romanNumeralsCharts.put(5, "V");
         romanNumeralsCharts.put(10, "X");
         romanNumeralsCharts.put(50, "L");
-        romanNumeralsCharts.put(100, "L");
+        romanNumeralsCharts.put(100, "C");
         romanNumeralsCharts.put(500, "D");
         romanNumeralsCharts.put(1000, "M");
 
