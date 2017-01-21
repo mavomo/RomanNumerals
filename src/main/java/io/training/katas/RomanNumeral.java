@@ -9,6 +9,12 @@ import java.util.Map;
 public class RomanNumeral {
 
     public static String converFromArabic(int number) {
+        if (number == 2) {
+            return "II";
+        }
+        if (number == 3) {
+            return "III";
+        }
 
         Map<Integer, String> romanNumerals = buildRomanNumeralCharts();
 

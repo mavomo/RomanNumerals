@@ -40,10 +40,22 @@ public class RomanNumeralsTest {
         assertThat(RomanNumeral.converFromArabic(500)).isEqualTo("D");
     }
 
-
     @Test
     public void should_return_M_given_number_1000(){
         assertThat(RomanNumeral.converFromArabic(1000)).isEqualTo("M");
     }
+
+    @Test
+    public void should_return_II_given_number_2(){
+        assertThat(RomanNumeral.converFromArabic(2)).isEqualTo("II");
+    }
+
+
+    @Test
+    public void should_return_III_given_number_3(){
+        assertThat(RomanNumeral.converFromArabic(3)).isEqualTo("III");
+    }
+
+
 
 }
