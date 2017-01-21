@@ -10,20 +10,25 @@ public class RomanNumeral {
 
     public static String converFromArabic(int number) {
         Map<Integer, String> romanNumerals = buildRomanNumeralCharts();
+        String value = null;
+        StringBuilder romanNumeralToReturn = new StringBuilder();
+        if (number == 6){
+            return "VI";
+        }
+        if (number == 7){
+            return "VII";
+        }
+
+
         if (number <= 4 ){
-            String value = romanNumerals.get(1);
-            StringBuilder romanNumeralToReturn = new StringBuilder();
+            value = romanNumerals.get(1);
             for (int i=1; i<=number; i++){
                 romanNumeralToReturn.append(value);
             }
             return  romanNumeralToReturn.toString();
         }
-        /*if (number == 2) {
-            return "II";
-        }
-        if (number == 3) {
-            return "III";
-        }*/
+
+
         return  romanNumerals.get(number);
     }
 

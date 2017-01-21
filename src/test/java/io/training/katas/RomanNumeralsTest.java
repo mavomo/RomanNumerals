@@ -56,6 +56,16 @@ public class RomanNumeralsTest {
         assertThat(RomanNumeral.converFromArabic(3)).isEqualTo("III");
     }
 
+    @Test
+    public void should_return_VI_given_number_6(){
+        assertThat(RomanNumeral.converFromArabic(6)).isEqualTo("VI");
+    }
+
+    @Test
+    public void should_return_VII_given_number_7(){
+        assertThat(RomanNumeral.converFromArabic(7)).isEqualTo("VII");
+    }
+
 
 
 }
