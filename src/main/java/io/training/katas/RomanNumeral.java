@@ -2,6 +2,7 @@ package io.training.katas;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by Michelle on 21/01/2017.
@@ -10,7 +11,7 @@ public class RomanNumeral {
 
     public static String converFromArabic(int number) {
         Map<Integer, String> romanNumerals = buildRomanNumeralCharts();
-        String value = null;
+        String value = romanNumerals.get(number);
         StringBuilder romanNumeralToReturn = new StringBuilder();
 
         int arabicNumberToConvert = 10;
@@ -27,20 +28,18 @@ public class RomanNumeral {
         }
 
         arabicNumberToConvert = 1;
-        if (number <= 4 ){
-            while (number>=arabicNumberToConvert){
+        while (number>=arabicNumberToConvert){
                 value = romanNumerals.get(arabicNumberToConvert);
                 romanNumeralToReturn.append(value);
                 number -= arabicNumberToConvert;
-            }
-            return  romanNumeralToReturn.toString();
         }
 
-        return  romanNumerals.get(number);
+
+        return  romanNumeralToReturn.toString();
     }
 
     private static Map<Integer, String> buildRomanNumeralCharts() {
-        Map<Integer, String> romanNumeralsCharts = new HashMap<>();
+        Map<Integer, String> romanNumeralsCharts = new TreeMap<>();
         romanNumeralsCharts.put(1, "I");
         romanNumeralsCharts.put(5, "V");
         romanNumeralsCharts.put(10, "X");
