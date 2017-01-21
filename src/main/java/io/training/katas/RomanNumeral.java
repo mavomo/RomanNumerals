@@ -13,23 +13,26 @@ public class RomanNumeral {
         String value = null;
         StringBuilder romanNumeralToReturn = new StringBuilder();
 
-        if (number > 10 && number<40){
-            value = romanNumerals.get(10);
+        int arabicNumberToConvert = 10;
+
+        if (number > arabicNumberToConvert && number<40){
+            value = romanNumerals.get(arabicNumberToConvert);
             romanNumeralToReturn.append(value);
-            number -= 10;
+            number -= arabicNumberToConvert;
+        }
+        arabicNumberToConvert = 5;
+        if (number > arabicNumberToConvert && number <=8){
+            value = romanNumerals.get(arabicNumberToConvert);
+            romanNumeralToReturn.append(value);
+            number -= arabicNumberToConvert;
         }
 
-        if (number > 5 && number <=8){
-            value = romanNumerals.get(5);
-            romanNumeralToReturn.append(value);
-            number -= 5;
-        }
-
+        arabicNumberToConvert = 1;
         if (number <= 4 ){
-            value = romanNumerals.get(1);
+            value = romanNumerals.get(arabicNumberToConvert);
             while (0<number){
                 romanNumeralToReturn.append(value);
-                number -= 1;
+                number -= arabicNumberToConvert;
             }
             return  romanNumeralToReturn.toString();
         }
