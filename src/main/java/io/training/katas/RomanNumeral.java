@@ -14,14 +14,13 @@ public class RomanNumeral {
         StringBuilder romanNumeralToReturn = new StringBuilder();
 
         int arabicNumberToConvert = 10;
-
-        if (number > arabicNumberToConvert && number<40){
+        while (number >= arabicNumberToConvert && number<40){
             value = romanNumerals.get(arabicNumberToConvert);
             romanNumeralToReturn.append(value);
             number -= arabicNumberToConvert;
         }
         arabicNumberToConvert = 5;
-        if (number > arabicNumberToConvert && number <=8){
+        while (number >= arabicNumberToConvert && number <=8){
             value = romanNumerals.get(arabicNumberToConvert);
             romanNumeralToReturn.append(value);
             number -= arabicNumberToConvert;
@@ -29,14 +28,13 @@ public class RomanNumeral {
 
         arabicNumberToConvert = 1;
         if (number <= 4 ){
-            value = romanNumerals.get(arabicNumberToConvert);
-            while (0<number){
+            while (number>=arabicNumberToConvert){
+                value = romanNumerals.get(arabicNumberToConvert);
                 romanNumeralToReturn.append(value);
                 number -= arabicNumberToConvert;
             }
             return  romanNumeralToReturn.toString();
         }
-
 
         return  romanNumerals.get(number);
     }
