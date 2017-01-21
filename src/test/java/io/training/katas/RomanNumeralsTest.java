@@ -82,7 +82,43 @@ public class RomanNumeralsTest {
     public void should_return_XVII_given_number_17(){
         assertThat(RomanNumeral.converFromArabic(17)).isEqualTo("XVII");
     }
+    @Test
+    public void should_return_MCLV_given_number_1155(){
+        assertThat(RomanNumeral.converFromArabic(1155)).isEqualTo("MCLV");
+    }
 
+    @Test
+    public void should_return_IV_given_number_4(){
+        assertThat(RomanNumeral.converFromArabic(4)).isEqualTo("IV");
+    }
+
+    @Test
+    public void should_return_IX_given_number_9(){
+        assertThat(RomanNumeral.converFromArabic(9)).isEqualTo("IX");
+    }
+    @Test
+    public void should_return_XL_given_number_40(){
+        assertThat(RomanNumeral.converFromArabic(40)).isEqualTo("XL");
+    }
+
+    @Test
+    public void should_return_XC_given_number_90(){
+        assertThat(RomanNumeral.converFromArabic(90)).isEqualTo("XC");
+    }
+
+    @Test
+    public void should_return_CD_given_number_400(){
+        assertThat(RomanNumeral.converFromArabic(400)).isEqualTo("CD");
+    }
+    @Test
+    public void should_return_CM_given_number_900(){
+        assertThat(RomanNumeral.converFromArabic(900)).isEqualTo("CM");
+    }
+
+    @Test
+    public void should_return_MMDCCLVII_given_number_2757(){
+        assertThat(RomanNumeral.converFromArabic(2757)).isEqualTo("MMDCCLVII");
+    }
 
 
 
