@@ -1,8 +1,6 @@
 package io.training.katas;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by Michelle on 21/01/2017.
@@ -12,14 +10,18 @@ public class RomanNumeral {
     public static String converFromArabic(int number) {
         Map<Integer, String> romanNumerals = buildRomanNumeralCharts();
         String value = romanNumerals.get(number);
+
         StringBuilder romanNumeralToReturn = new StringBuilder();
 
-        int arabicNumberToConvert = 10;
-        while (number >= arabicNumberToConvert && number<40){
-            value = romanNumerals.get(arabicNumberToConvert);
-            romanNumeralToReturn.append(value);
-            number -= arabicNumberToConvert;
+        for (Integer key : romanNumerals.keySet()){
+            int arabicNumberToConvert = key;
+            while (number >= arabicNumberToConvert){
+                value = romanNumerals.get(arabicNumberToConvert);
+                romanNumeralToReturn.append(value);
+                number -= arabicNumberToConvert;
+            }
         }
+/*
         arabicNumberToConvert = 5;
         while (number >= arabicNumberToConvert && number <=8){
             value = romanNumerals.get(arabicNumberToConvert);
@@ -28,18 +30,20 @@ public class RomanNumeral {
         }
 
         arabicNumberToConvert = 1;
-        while (number>=arabicNumberToConvert){
+        while (number>=arabicNumberToConvert && number<50){
                 value = romanNumerals.get(arabicNumberToConvert);
                 romanNumeralToReturn.append(value);
                 number -= arabicNumberToConvert;
         }
 
-
-        return  romanNumeralToReturn.toString();
+        if (number>=50){
+            romanNumeralToReturn.append(value);
+        }*/
+        return romanNumeralToReturn.toString();
     }
 
     private static Map<Integer, String> buildRomanNumeralCharts() {
-        Map<Integer, String> romanNumeralsCharts = new TreeMap<>();
+        Map<Integer, String> romanNumeralsCharts = new TreeMap<>(Collections.<Integer>reverseOrder());
         romanNumeralsCharts.put(1, "I");
         romanNumeralsCharts.put(5, "V");
         romanNumeralsCharts.put(10, "X");
