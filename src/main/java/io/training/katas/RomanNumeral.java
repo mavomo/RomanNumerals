@@ -27,7 +27,7 @@ public class RomanNumeral {
 
         if (number <= 4 ){
             value = romanNumerals.get(1);
-            for (;0<number;){
+            while (0<number){
                 romanNumeralToReturn.append(value);
                 number -= 1;
             }
