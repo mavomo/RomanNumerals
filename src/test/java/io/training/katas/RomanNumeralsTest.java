@@ -3,6 +3,8 @@ package io.training.katas;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import java.util.*;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -80,6 +82,17 @@ public class RomanNumeralsTest {
     public void should_return_XVII_given_number_17(){
         assertThat(RomanNumeral.converFromArabic(17)).isEqualTo("XVII");
     }
+
+    @Test
+    public void should_have_all_the_keyset_ordered_in_reverse_order(){
+        Map<Integer, String> mapForTest = new HashMap<>();
+        mapForTest.put(1, "toto");
+        mapForTest.put(2, "titi");
+        List<Integer> keys =  new ArrayList<>(mapForTest.keySet());
+        Assertions.assertThat(keys).isSortedAccordingTo(Collections.reverseOrder());
+    }
+
+
 
 
 
