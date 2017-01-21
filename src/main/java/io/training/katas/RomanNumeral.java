@@ -12,19 +12,28 @@ public class RomanNumeral {
         Map<Integer, String> romanNumerals = buildRomanNumeralCharts();
         String value = null;
         StringBuilder romanNumeralToReturn = new StringBuilder();
+        if (number > 10 && number<40){
+            value = romanNumerals.get(10);
+            romanNumeralToReturn.append(value);
+            number -= 10;
+        }
+       /* if(number == 11){
+            return "XI";
+        }
+
+        if(number == 12){
+            return "XII";
+        }
+
+        if(number == 17){
+            return "XVII";
+        }*/
+
         if (number > 5 && number <=8){
             value = romanNumerals.get(5);
             romanNumeralToReturn.append(value);
             number -= 5;
         }
-        /*
-        if (number == 6){
-            return "VI";
-        }
-        if (number == 7){
-            return "VII";
-        }*/
-
 
         if (number <= 4 ){
             value = romanNumerals.get(1);

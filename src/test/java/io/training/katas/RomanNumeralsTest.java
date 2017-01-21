@@ -67,5 +67,20 @@ public class RomanNumeralsTest {
     }
 
 
+    @Test
+    public void should_return_XI_given_number_11(){
+        assertThat(RomanNumeral.converFromArabic(11)).isEqualTo("XI");
+    }
+
+    @Test
+    public void should_return_XII_given_number_12(){
+        assertThat(RomanNumeral.converFromArabic(12)).isEqualTo("XII");
+    }
+    @Test
+    public void should_return_XVII_given_number_17(){
+        assertThat(RomanNumeral.converFromArabic(17)).isEqualTo("XVII");
+    }
+
+
 
 }
