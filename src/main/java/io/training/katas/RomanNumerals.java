@@ -1,5 +1,10 @@
 package io.training.katas;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * Created by Michelle on 08/02/2017.
  */
@@ -9,20 +14,29 @@ public class RomanNumerals {
     public static String convertToArabic(int number) {
 
         StringBuilder value = new StringBuilder();
+        Map<Integer, String> romanNumerals = new TreeMap<>(Collections.reverseOrder());
+        romanNumerals.put(100, "C");
+        romanNumerals.put(50, "L");
+        romanNumerals.put(10, "X");
+        romanNumerals.put(5, "V");
+        romanNumerals.put(1, "I");
 
-        int numberToDecrement = 100;
-
-        while (number >= 100){
-            value.append("C");
-            number -=numberToDecrement;
+        for(Integer key : romanNumerals.keySet()){
+            int numberToDecrement = key;
+            while (number >= key){
+                String romanNumeral = romanNumerals.get(key);
+                value.append(romanNumeral);
+                number -= numberToDecrement;
+            }
         }
+
 
       /*  if (number == numberToDecrement){
             value.append("C");
             number -=numberToDecrement;
         }*/
 
-        numberToDecrement = 50;
+      /*  numberToDecrement = 50;
         if (number == numberToDecrement){
             value.append("L");
             number -= numberToDecrement;
@@ -57,7 +71,7 @@ public class RomanNumerals {
         for (int i = 1; i <= number; i++) {
             value.append("I");
         }
-    }
+    }*/
 
         return  value.toString();
     }
