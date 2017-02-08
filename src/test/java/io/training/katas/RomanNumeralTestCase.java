@@ -78,4 +78,14 @@ public class RomanNumeralTestCase {
     public void should_return_CC_given_200(){
         assertThat(RomanNumerals.convertToArabic(200)).isEqualTo("CC");
     }
+
+    @Test
+    public void should_return_D_given_500(){
+        assertThat(RomanNumerals.convertToArabic(500)).isEqualTo("D");
+    }
+
+    @Test
+    public void should_return_M_given_1000(){
+        assertThat(RomanNumerals.convertToArabic(1000)).isEqualTo("M");
+    }
 }
