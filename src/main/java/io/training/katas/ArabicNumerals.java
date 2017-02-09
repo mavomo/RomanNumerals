@@ -12,9 +12,33 @@ import java.util.stream.Collectors;
 public class ArabicNumerals {
 
 
-    public static Integer convertToRomanNumeral(String romanNumeral) {
+    public static Integer convertToArabicNumerals(String romanNumeral) {
 
+        Map<Character, Integer> arabicNumeralsCharts = getArabicNumeralsChart();
 
+        char[] romanCharacters = romanNumeral.toCharArray();
+
+        int value = 0;
+        for (int index =0; index < romanCharacters.length; index++){
+            Character currentChar = romanCharacters[index];
+            int arabicValueOfCurrentChar = arabicNumeralsCharts.get(currentChar);
+            value += arabicValueOfCurrentChar;
+            for (int nextIndex = index+1; nextIndex < romanCharacters.length; nextIndex++){
+                if (romanCharacters.length > nextIndex){
+                    Character nextChar = romanCharacters[nextIndex];
+                    int arabicValueOfNextChar = arabicNumeralsCharts.get(nextChar);
+                    if (arabicValueOfCurrentChar < arabicValueOfNextChar){
+                        value -= arabicValueOfCurrentChar;
+                        value += arabicValueOfNextChar - arabicValueOfCurrentChar;
+                        index++;
+                    }
+                }
+            }
+        }
+        return value;
+    }
+
+    private static Map<Character, Integer> getArabicNumeralsChart() {
         Map<Character, Integer> arabicNumeralsCharts = new TreeMap<>(Collections.reverseOrder());
 
         arabicNumeralsCharts.put('M', 1000);
@@ -24,17 +48,6 @@ public class ArabicNumerals {
         arabicNumeralsCharts.put('X', 10);
         arabicNumeralsCharts.put('V', 5);
         arabicNumeralsCharts.put('I', 1);
-
-        char[] romanCharacters = romanNumeral.toCharArray();
-        int value = 0;
-
-        if (romanNumeral == "IV"){
-            return 4;
-        }
-        for (int index =0; index < romanCharacters.length; index++){
-            Character currentChar = romanCharacters[index];
-            value += arabicNumeralsCharts.get(currentChar);
-        }
-        return value;
+        return arabicNumeralsCharts;
     }
 }
