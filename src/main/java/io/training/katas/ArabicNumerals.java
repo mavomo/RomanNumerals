@@ -17,25 +17,21 @@ public class ArabicNumerals {
 
         Map<Character, Integer> arabicNumeralsCharts = new TreeMap<>(Collections.reverseOrder());
 
+        arabicNumeralsCharts.put('M', 1000);
+        arabicNumeralsCharts.put('D', 500);
+        arabicNumeralsCharts.put('C', 100);
+        arabicNumeralsCharts.put('L', 50);
         arabicNumeralsCharts.put('X', 10);
         arabicNumeralsCharts.put('V', 5);
         arabicNumeralsCharts.put('I', 1);
 
-        List<Character> romanCharacters = romanNumeral.chars().mapToObj(r -> (char)r).collect(Collectors.toList());
 
+        List<Character> romanCharacters = romanNumeral.chars().mapToObj(r -> (char)r).collect(Collectors.toList());
         int value = 0;
         for (int index =0; index < romanCharacters.size(); index++){
             Character currentChar = romanCharacters.get(index);
             value += arabicNumeralsCharts.get(currentChar);
-           // romanCharacters.remove(index);
         }
-
-      /*  for (int i=0; i< romanCharacters.size(); i++){
-            value ++;
-        }*/
-      /*  if (romanNumeral == "XVIII"){
-            return  18;
-        }*/
         return value;
     }
 }
