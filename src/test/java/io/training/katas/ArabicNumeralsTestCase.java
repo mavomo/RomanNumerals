@@ -34,6 +34,20 @@ public class ArabicNumeralsTestCase {
         assertThat(ArabicNumerals.convertToRomanNumeral("VI")).isEqualTo(6);
     }
 
+    @Test
+    public void should_return_10_given_X() {
+        assertThat(ArabicNumerals.convertToRomanNumeral("X")).isEqualTo(10);
+    }
+
+
+    @Test
+    public void should_return_18_given_XVIII() {
+        assertThat(ArabicNumerals.convertToRomanNumeral("XVIII")).isEqualTo(18);
+    }
+
+
+
+
 
 
 }
