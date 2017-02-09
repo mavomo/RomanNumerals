@@ -1,5 +1,8 @@
 package io.training.katas;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Created by Michelle on 09/02/2017.
  */
@@ -8,19 +11,18 @@ public class ArabicNumerals {
 
     public static Integer convertToRomanNumeral(String romanNumeral) {
 
-        char[] romanCharacters = romanNumeral.toCharArray();
-
-
+        List<Character> romanCharacters = romanNumeral.chars().mapToObj(r -> (char)r).collect(Collectors.toList());
 
         int value = 0;
         if (romanNumeral == "V"){
-            return 5;
+            value = 5;
+            romanCharacters.remove(0);
         }
         if (romanNumeral == "VI"){
             return 6;
         }
 
-        for (int i=0; i<romanCharacters.length; i++){
+        for (int i=0; i< romanCharacters.size(); i++){
             value ++;
         }
        /* if (romanNumeral == "II"){
