@@ -72,10 +72,15 @@ public class ArabicNumeralsTestCase {
         assertThat(convertToRomanNumeral("M")).isEqualTo(1000);
     }
 
-
     @Test
     public void should_return_1578_given_M() {
         assertThat(convertToRomanNumeral("MDLXXVIII")).isEqualTo(1578);
+    }
+
+
+    @Test
+    public void should_return_3578_given_M() {
+        assertThat(convertToRomanNumeral("MMMDLXXVIII")).isEqualTo(3578);
     }
 
 

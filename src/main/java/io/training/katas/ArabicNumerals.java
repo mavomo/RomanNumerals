@@ -25,11 +25,10 @@ public class ArabicNumerals {
         arabicNumeralsCharts.put('V', 5);
         arabicNumeralsCharts.put('I', 1);
 
-
-        List<Character> romanCharacters = romanNumeral.chars().mapToObj(r -> (char)r).collect(Collectors.toList());
+        char[] romanCharacters = romanNumeral.toCharArray();
         int value = 0;
-        for (int index =0; index < romanCharacters.size(); index++){
-            Character currentChar = romanCharacters.get(index);
+        for (int index =0; index < romanCharacters.length; index++){
+            Character currentChar = romanCharacters[index];
             value += arabicNumeralsCharts.get(currentChar);
         }
         return value;
