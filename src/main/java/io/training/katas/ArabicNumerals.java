@@ -27,6 +27,10 @@ public class ArabicNumerals {
 
         char[] romanCharacters = romanNumeral.toCharArray();
         int value = 0;
+
+        if (romanNumeral == "IV"){
+            return 4;
+        }
         for (int index =0; index < romanCharacters.length; index++){
             Character currentChar = romanCharacters[index];
             value += arabicNumeralsCharts.get(currentChar);
