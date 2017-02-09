@@ -1,6 +1,5 @@
 package io.training.katas;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,7 +13,6 @@ public class RomanNumeralTestCase {
     public void should_return_I_given_1(){
         assertThat(RomanNumerals.convertToArabic(1)).isEqualTo("I");
     }
-
 
     @Test
     public void should_return_II_given_2(){
@@ -88,4 +86,48 @@ public class RomanNumeralTestCase {
     public void should_return_M_given_1000(){
         assertThat(RomanNumerals.convertToArabic(1000)).isEqualTo("M");
     }
+
+    @Test
+    public void should_return_IV_given_4(){
+        assertThat(RomanNumerals.convertToArabic(4)).isEqualTo("IV");
+    }
+
+    @Test
+    public void should_return_IX_given_9(){
+        assertThat(RomanNumerals.convertToArabic(9)).isEqualTo("IX");
+    }
+
+    @Test
+    public void should_return_XL_given_40(){
+        assertThat(RomanNumerals.convertToArabic(40)).isEqualTo("XL");
+    }
+
+    @Test
+    public void should_return_XC_given_90(){
+        assertThat(RomanNumerals.convertToArabic(90)).isEqualTo("XC");
+    }
+
+    @Test
+    public void should_return_CD_given_400(){
+        assertThat(RomanNumerals.convertToArabic(400)).isEqualTo("CD");
+    }
+
+
+    @Test
+    public void should_return_CM_given_900(){
+        assertThat(RomanNumerals.convertToArabic(900)).isEqualTo("CM");
+    }
+
+
+    @Test
+    public void should_return_MMXVII_given_2017(){
+        assertThat(RomanNumerals.convertToArabic(2017)).isEqualTo("MMXVII");
+    }
+
+
+    @Test
+    public void should_return_MMMCDXCIX_given_3499(){
+        assertThat(RomanNumerals.convertToArabic(3499)).isEqualTo("MMMCDXCIX");
+    }
+
 }
