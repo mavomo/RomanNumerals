@@ -27,35 +27,14 @@ public class ArabicNumerals {
         for (int index =0; index < romanCharacters.size(); index++){
             Character currentChar = romanCharacters.get(index);
             value += arabicNumeralsCharts.get(currentChar);
-            romanCharacters.remove(index);
+           // romanCharacters.remove(index);
         }
 
-        for (int i=0; i< romanCharacters.size(); i++){
+      /*  for (int i=0; i< romanCharacters.size(); i++){
             value ++;
-        }
-        if (romanNumeral == "XVIII"){
+        }*/
+      /*  if (romanNumeral == "XVIII"){
             return  18;
-        }
-
-       /* if (romanNumeral == "X"){
-            value =10;
-            romanCharacters.remove(0);
-        }
-        if (romanNumeral == "V" || romanNumeral == "VI"){
-            value = 5;
-            romanCharacters.remove(0);
-        }
-       /* if (romanNumeral == "VI"){
-            value = 5;
-            romanCharacters.remove(0);
-        }
-
-
-       /* if (romanNumeral == "II"){
-            return 2;
-        }
-        if (romanNumeral == "III"){
-            return 3;
         }*/
         return value;
     }
