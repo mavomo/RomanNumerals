@@ -5,9 +5,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Created by Michelle on 25/02/2017.
- */
 public class ArabicNumeralsConverter {
 
     public static int convertFromRoman(String romanNumeral) {
@@ -24,6 +21,10 @@ public class ArabicNumeralsConverter {
             }
         return arabicNumber;
     }
+
+
+
+
 
     private static Map<String, Integer> sortArabicNumeralsInReverseOrderUsingValue() {
         Map<String, Integer> result = new LinkedHashMap<>();

@@ -3,9 +3,6 @@ package io.training.katas.new_version;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-/**
- * Created by Michelle on 25/02/2017.
- */
 public class ArabicNumeralsConverterShould {
 
     @Test
@@ -50,68 +47,68 @@ public class ArabicNumeralsConverterShould {
     }
 
     @Test
-    public void should_return_L_given_50() {
+    public void should_return_50_given_L() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("L")).isEqualTo(50);
     }
 
     @Test
-    public void should_return_C_given_100() {
+    public void should_return_100_given_C() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("C")).isEqualTo(100);
     }
 
     @Test
-    public void should_return_D_given_500() {
+    public void should_return_500_given_D() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("D")).isEqualTo(500);
     }
 
     @Test
-    public void should_return_M_given_1000() {
+    public void should_return_1000_given_M() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("M")).isEqualTo(1000);
     }
 
 
     @Test
-    public void should_return_MMM_given_3000() {
+    public void should_return_3000_given_MMM() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("MMM")).isEqualTo(3000);
     }
 
     @Test
-    public void should_return_MMMDLXXVIII_given_3578() {
+    public void should_return_3578_given_MMMDLXXVIII() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("MMMDLXXVIII")).isEqualTo(3578);
     }
 
     @Test
-    public void should_return_IV_given_4() {
+    public void should_return_4_given_IV() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("IV")).isEqualTo(4);
     }
 
     @Test
-    public void should_return_IX_given_9() {
+    public void should_return_9_given_IX() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("IX")).isEqualTo(9);
     }
 
     @Test
-    public void should_return_XL_given_40() {
+    public void should_return_40_given_XL() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XL")).isEqualTo(40);
     }
 
     @Test
-    public void should_return_XC_given_90() {
+    public void should_return_90_given_XC() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XC")).isEqualTo(90);
     }
 
     @Test
-    public void should_return_CD_given_400() {
+    public void should_return_400_given_CD() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("CD")).isEqualTo(400);
     }
 
     @Test
-    public void should_return_CM_given_900() {
+    public void should_return_900_given_CM() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("CM")).isEqualTo(900);
     }
 
     @Test
-    public void should_return_MMMCDXCVIII_given_3498() {
+    public void should_return_3498_given_MMMCDXCVIII() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("MMMCDXCVIII")).isEqualTo(3498);
     }
 
