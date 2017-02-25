@@ -22,14 +22,15 @@ public class ArabicNumeralsConverter {
         arabicNumeralsChart.put("V", 5);
         arabicNumeralsChart.put("I", 1);
 
-        Map<String, Integer> sortedArabicNumeralCharts = new LinkedHashMap<>();
+        Map<String, Integer> result = new LinkedHashMap<>();
+
 
         arabicNumeralsChart.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Collections.reverseOrder()))
-                .forEachOrdered(x -> sortedArabicNumeralCharts.put(x.getKey(), x.getValue()));
+                .forEachOrdered(x -> result.put(x.getKey(), x.getValue()));
 
 
-        for (String romanNumeralKey : sortedArabicNumeralCharts.keySet()){
+        for (String romanNumeralKey : result.keySet()){
             int arabicNumeralValue = arabicNumeralsChart.get(romanNumeralKey);
             while (romanNumeral.startsWith(romanNumeralKey)){
                     arabicNumber+= arabicNumeralValue;
