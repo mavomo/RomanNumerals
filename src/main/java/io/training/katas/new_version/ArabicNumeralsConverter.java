@@ -19,7 +19,7 @@ public class ArabicNumeralsConverter {
 
             while (romanNumeral.startsWith(romanNumeralKey)){
                     arabicNumber+= arabicNumeralValue;
-                    romanNumeral = romanNumeral.substring(1);
+                    romanNumeral = romanNumeral.substring(romanNumeralKey.length());
                 }
             }
         return arabicNumber;
@@ -27,7 +27,6 @@ public class ArabicNumeralsConverter {
 
     private static Map<String, Integer> sortArabicNumeralsInReverseOrderUsingValue() {
         Map<String, Integer> result = new LinkedHashMap<>();
-
         buildArabicNumeralsChart().entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Collections.reverseOrder()))
                 .forEachOrdered(x -> result.put(x.getKey(), x.getValue()));
@@ -36,11 +35,17 @@ public class ArabicNumeralsConverter {
 
     private static Map<String, Integer> buildArabicNumeralsChart() {
         Map<String, Integer> arabicNumeralsChart = new TreeMap<>();
+
         arabicNumeralsChart.put("M", 1000);
+        arabicNumeralsChart.put("CM", 900);
         arabicNumeralsChart.put("D", 500);
+        arabicNumeralsChart.put("CD", 400);
         arabicNumeralsChart.put("C", 100);
+        arabicNumeralsChart.put("XC", 90);
         arabicNumeralsChart.put("L", 50);
+        arabicNumeralsChart.put("XL",40);
         arabicNumeralsChart.put("X", 10);
+        arabicNumeralsChart.put("IX",9);
         arabicNumeralsChart.put("V", 5);
         arabicNumeralsChart.put("IV",4);
         arabicNumeralsChart.put("I", 1);

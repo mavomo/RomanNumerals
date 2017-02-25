@@ -80,11 +80,39 @@ public class ArabicNumeralsConverterShould {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("MMMDLXXVIII")).isEqualTo(3578);
     }
 
-
     @Test
     public void should_return_IV_given_4() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("IV")).isEqualTo(4);
     }
 
+    @Test
+    public void should_return_IX_given_9() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("IX")).isEqualTo(9);
+    }
+
+    @Test
+    public void should_return_XL_given_40() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XL")).isEqualTo(40);
+    }
+
+    @Test
+    public void should_return_XC_given_90() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XC")).isEqualTo(90);
+    }
+
+    @Test
+    public void should_return_CD_given_400() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("CD")).isEqualTo(400);
+    }
+
+    @Test
+    public void should_return_CM_given_900() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("CM")).isEqualTo(900);
+    }
+
+    @Test
+    public void should_return_MMMCDXCVIII_given_3498() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("MMMCDXCVIII")).isEqualTo(3498);
+    }
 
 }
