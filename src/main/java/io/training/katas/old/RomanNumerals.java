@@ -1,4 +1,4 @@
-package io.training.katas;
+package io.training.katas.old;
 
 import java.util.Collections;
 import java.util.HashMap;

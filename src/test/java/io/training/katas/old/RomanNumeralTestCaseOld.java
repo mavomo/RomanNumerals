@@ -1,4 +1,4 @@
-package io.training.katas;
+package io.training.katas.old;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by Michelle on 08/02/2017.
  */
-public class RomanNumeralTestCase {
+public class RomanNumeralTestCaseOld {
 
     @Test
     public void should_return_I_given_1(){
