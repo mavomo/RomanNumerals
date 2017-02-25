@@ -18,7 +18,7 @@ public class ArabicNumeralsConverter {
 
         List<Character> romanNumerals = new ArrayList<>(Arrays.asList(romanNumeralsAsChars));
         int firstCharIndex = 0;
-         for (; firstCharIndex < romanNumerals.size();){
+         while (firstCharIndex < romanNumerals.size()){
              if (romanNumeral.startsWith("X")){
                  arabicNumber += 10;
                  romanNumerals.remove(firstCharIndex);
@@ -27,13 +27,7 @@ public class ArabicNumeralsConverter {
                  arabicNumber++;
                  romanNumerals.remove(firstCharIndex);
              }
-    }
-        /*
-        if (!romanNumerals.isEmpty()) {
-            for (int i = 0; i < romanNumerals.size(); i++) {
-                arabicNumber++;
-            }
-        }*/
+        }
 
         return arabicNumber;
     }
