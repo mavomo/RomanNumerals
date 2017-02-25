@@ -23,13 +23,17 @@ public class ArabicNumeralsConverter {
                  arabicNumber += 10;
                  romanNumerals.remove(firstCharIndex);
              }
+             if(romanNumeral.startsWith("I")){
+                 arabicNumber++;
+                 romanNumerals.remove(firstCharIndex);
+             }
     }
-        
+        /*
         if (!romanNumerals.isEmpty()) {
             for (int i = 0; i < romanNumerals.size(); i++) {
                 arabicNumber++;
             }
-        }
+        }*/
 
         return arabicNumber;
     }
