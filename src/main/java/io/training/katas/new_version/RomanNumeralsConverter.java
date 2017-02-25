@@ -12,8 +12,9 @@ public class RomanNumeralsConverter {
             romanNumeralValue.append("X");
             arabicNumeral -= 10;
      }
-     for (int i = 1; i <= arabicNumeral; i++) {
-             romanNumeralValue.append("I");
+     for (; 1 <= arabicNumeral;) {
+         romanNumeralValue.append("I");
+         arabicNumeral -= 1;
      }
 
      return romanNumeralValue.toString();
