@@ -79,4 +79,12 @@ public class ArabicNumeralsConverterShould {
     public void should_return_MMMDLXXVIII_given_3578() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("MMMDLXXVIII")).isEqualTo(3578);
     }
+
+
+    @Test
+    public void should_return_IV_given_4() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("IV")).isEqualTo(4);
+    }
+
+
 }
