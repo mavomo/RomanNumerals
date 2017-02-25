@@ -12,6 +12,23 @@ public class RomanNumeralsConverter {
 
     public static String convertFromArabic(int arabicNumeral) {
 
+        StringBuilder romanNumeralValue = new StringBuilder();
+
+        for(Integer arabicValue : getRomanNumeralChart().keySet()){
+
+            int numberToDecrement = arabicValue;
+
+            while (numberToDecrement <= arabicNumeral){
+
+                romanNumeralValue.append(getRomanNumeralChart().get(numberToDecrement));
+                arabicNumeral -= numberToDecrement;
+            }
+        }
+     return romanNumeralValue.toString();
+    }
+
+
+    private static Map<Integer, String> getRomanNumeralChart() {
         Map<Integer, String> romanNumeralsChart = new TreeMap<>(Collections.<Integer>reverseOrder());
 
         romanNumeralsChart.put(1000, "M");
@@ -27,16 +44,6 @@ public class RomanNumeralsConverter {
         romanNumeralsChart.put(4, "IV");
         romanNumeralsChart.put(5, "V");
         romanNumeralsChart.put(1, "I");
-
-
-        StringBuilder romanNumeralValue = new StringBuilder();
-        for(Integer arabicValue : romanNumeralsChart.keySet()){
-            int numberToDecrement = arabicValue;
-            while (numberToDecrement <= arabicNumeral){
-                romanNumeralValue.append(romanNumeralsChart.get(numberToDecrement));
-                arabicNumeral -= numberToDecrement;
-            }
-        }
-     return romanNumeralValue.toString();
+        return romanNumeralsChart;
     }
 }
