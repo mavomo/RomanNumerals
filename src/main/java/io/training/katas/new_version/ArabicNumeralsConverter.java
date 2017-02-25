@@ -14,18 +14,14 @@ public class ArabicNumeralsConverter {
 
     public static int convertFromRoman(String romanNumeral) {
         int arabicNumber = 0;
-        Character[] romanNumeralsAsChars = romanNumeral.chars().mapToObj(c -> (char)c).toArray(Character[]::new);
-
-        List<Character> romanNumerals = new ArrayList<>(Arrays.asList(romanNumeralsAsChars));
-        int firstCharIndex = 0;
-         while (firstCharIndex < romanNumerals.size()){
+        while (romanNumeral.length() > 0 ){
              if (romanNumeral.startsWith("X")){
-                 arabicNumber += 10;
-                 romanNumerals.remove(firstCharIndex);
+                 arabicNumber+= 10;
+                 romanNumeral = romanNumeral.substring(1);
              }
              if(romanNumeral.startsWith("I")){
-                 arabicNumber++;
-                 romanNumerals.remove(firstCharIndex);
+                 arabicNumber+=1;
+                 romanNumeral = romanNumeral.substring(1);
              }
         }
 

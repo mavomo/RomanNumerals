@@ -38,4 +38,9 @@ public class ArabicNumeralsConverterShould {
     public void should_return_30_given_XX() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XXX")).isEqualTo(30);
     }
+
+    @Test
+    public void should_return_23_given_XXIII() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XXIII")).isEqualTo(23);
+    }
 }
