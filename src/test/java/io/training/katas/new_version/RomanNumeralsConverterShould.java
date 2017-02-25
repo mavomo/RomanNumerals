@@ -42,6 +42,12 @@ public class RomanNumeralsConverterShould {
     }
 
 
+    @Test
+    public void should_return_XXXIII_given_33() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(33)).isEqualTo("XXXIII");
+    }
+
+
 
 
 }
