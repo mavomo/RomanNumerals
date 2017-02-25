@@ -15,10 +15,16 @@ public class RomanNumeralsConverter {
         Map<Integer, String> romanNumeralsChart = new TreeMap<>(Collections.<Integer>reverseOrder());
 
         romanNumeralsChart.put(1000, "M");
+        romanNumeralsChart.put(900, "CM");
         romanNumeralsChart.put(500, "D");
+        romanNumeralsChart.put(400, "CD");
         romanNumeralsChart.put(100, "C");
+        romanNumeralsChart.put(90, "XC");
         romanNumeralsChart.put(50, "L");
+        romanNumeralsChart.put(40, "XL");
         romanNumeralsChart.put(10, "X");
+        romanNumeralsChart.put(9, "IX");
+        romanNumeralsChart.put(4, "IV");
         romanNumeralsChart.put(5, "V");
         romanNumeralsChart.put(1, "I");
 

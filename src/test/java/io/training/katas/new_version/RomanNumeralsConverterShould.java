@@ -86,9 +86,41 @@ public class RomanNumeralsConverterShould {
     }
 
 
+    @Test
+    public void should_return_IV_given_4() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(4)).isEqualTo("IV");
+    }
+
+    @Test
+    public void should_return_IX_given_9() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(9)).isEqualTo("IX");
+    }
 
 
+    @Test
+    public void should_return_XL_given_40() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(40)).isEqualTo("XL");
+    }
+
+    @Test
+    public void should_return_XC_given_90() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(90)).isEqualTo("XC");
+    }
 
 
+    @Test
+    public void should_return_CD_given_400() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(400)).isEqualTo("CD");
+    }
+
+    @Test
+    public void should_return_CM_given_900() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(900)).isEqualTo("CM");
+    }
+
+    @Test
+    public void should_return_MMMCDXCVIII_given_3498() {
+        Assertions.assertThat(RomanNumeralsConverter.convertFromArabic(3498)).isEqualTo("MMMCDXCVIII");
+    }
 
 }
