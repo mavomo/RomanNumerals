@@ -17,25 +17,14 @@ public class ArabicNumeralsConverter {
         Character[] romanNumeralsAsChars = romanNumeral.chars().mapToObj(c -> (char)c).toArray(Character[]::new);
 
         List<Character> romanNumerals = new ArrayList<>(Arrays.asList(romanNumeralsAsChars));
-
-         for (int i=0; i < romanNumerals.size();){
+        int firstCharIndex = 0;
+         for (; firstCharIndex < romanNumerals.size();){
              if (romanNumeral.startsWith("X")){
                  arabicNumber += 10;
-                 romanNumerals.remove(i);
+                 romanNumerals.remove(firstCharIndex);
              }
     }
-
-/*
-        if (romanNumeral.equals("X")){
-            return 10;
-        }
-        if (romanNumeral.equals("XX")){
-            return 20;
-        }
-        if (romanNumeral.equals("XXX")){
-            return 30;
-        }
-*/
+        
         if (!romanNumerals.isEmpty()) {
             for (int i = 0; i < romanNumerals.size(); i++) {
                 arabicNumber++;
