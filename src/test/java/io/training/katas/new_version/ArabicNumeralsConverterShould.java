@@ -22,4 +22,21 @@ public class ArabicNumeralsConverterShould {
     public void should_return_3_given_III() {
         Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("III")).isEqualTo(3);
     }
+
+    @Test
+    public void should_return_10_given_X() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("X")).isEqualTo(10);
+    }
+
+
+    @Test
+    public void should_return_20_given_XX() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XX")).isEqualTo(20);
+    }
+
+
+    @Test
+    public void should_return_30_given_XX() {
+        Assertions.assertThat(ArabicNumeralsConverter.convertFromRoman("XXX")).isEqualTo(30);
+    }
 }
